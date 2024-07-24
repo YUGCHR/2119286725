@@ -14,12 +14,35 @@ INSERT OR REPLACE INTO LocalizedText (Language, Tag, Text) VALUES
 		('en_US', 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION', 						'Khmer unique Medieval era siege unit that replaces the Trebuchet.[NEWLINE]Higher [ICON_Bombard][ICON_Strength] Strength and [ICON_Movement] Movement. Exerts zone of control.'),
 
 -----   RECON   -----
-		('en_US', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 					'Only visible to adjacent enemy.[NEWLINE]Can move after attacking.[NEWLINE]Heals even after moving.'),
-		('en_US', 'LOC_PROMOTION_SENTRY_DESCRIPTION', 						'+1 sight range.[NEWLINE]+7 [ICON_Strength] Combat Strength when garrisoned or defending.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_FORCES_II_NAME', 			     	'Special Forces II'),
+		-- 																	FORWARD_OBSERVERS_BONUS_RANGE 			EXPERT_MARKSMAN_ADDITIONAL_ATTACK 			BATTLECRY_ATTACK_BONUS 										INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_FORCES_II_DESCRIPTION', 			'+1 [ICON_Range] Range (over terrain).[NEWLINE]Can make 2 attacks per turn.[NEWLINE]+5 [ICON_Strength] Combat Strength when attacking.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_FORCES_NAME', 			     	    'Special Forces'),
+		 -- 																MOD_MOVE_AFTER_ATTACKING 		   HEAL_AFTER_ACTION 				SIDE_ARMS_DEFENSE_BONUS 					INCREASE_HEAL_RATE_10
+		('en_US', 'LOC_PROMOTION_SPECIAL_FORCES_DESCRIPTION', 				'Can move after attacking.[NEWLINE]Heals even after moving.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.[NEWLINE]+10 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_GUERRILLA_NAME', 			     	 	    'Guerrilla'), -- ('PROMOTION_GUERRILLA', 'LOC_PROMOTION_GUERRILLA_NAME', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 3, 3, 'PROMOTION_CLASS_RECON'),
+		 -- 																CAMOUFLAGE_STEALTH 						  LONG_RANGE_BONUS_RANGE			INCREASE_HEAL_RATE_5
+		('en_US', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 					'Only visible to adjacent enemy.[NEWLINE].+2 [ICON_Range] Range.[NEWLINE]+5 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SHEPHERD_NAME', 			            	'Shepherd'),
+		 -- 																ESCORT_MOBILITY_SHARED_MOVEMENT 		  DANCING_CRANE_BONUS_MOVEMENT 			HELMSMAN_BONUS_WATER_MOVEMENT 
+		('en_US', 'LOC_PROMOTION_SHEPHERD_DESCRIPTION', 					'Shares [ICON_Movement] Movement.[NEWLINE]+1 - ? [ICON_Movement] Movement.[NEWLINE]+1 sight range.'),
+		 -- 																
+		--('en_US', 'LOC_PROMOTION_SHEPHERD_DESCRIPTION', 					'+1 - ? [ICON_Movement] Movement.[NEWLINE]+1 sight range.[NEWLINE]Suffers greatly reduced combat penalties when damaged.'),
+		--('en_US', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 					'Only visible to adjacent enemy.[NEWLINE]Can move after attacking.[NEWLINE]Heals even after moving.'),
+
+		 -- 																SPYGLASS_BONUS_SIGHT 	 SENTRY_COMBAT_BONUS 													RELENTLESS_STRENGTH_REDUCTION
+		('en_US', 'LOC_PROMOTION_SENTRY_DESCRIPTION', 						'+1 sight range.[NEWLINE]+7 [ICON_Strength] Combat Strength when garrisoned or defending.[NEWLINE]Suffers greatly reduced combat penalties when damaged.'),
+
 		('en_US', 'LOC_PROMOTION_GUIDE_NAME', 								'Guide'),
-		('en_US', 'LOC_PROMOTION_GUIDE_DESCRIPTION', 						'No river crossing penalties.[NEWLINE]No (dis)embarking penalties.[NEWLINE]Shares [ICON_Movement] Movement.'),
-		('en_US', 'LOC_PROMOTION_ALPINE_DESCRIPTION', 						'Faster [ICON_Movement] Movement on Hill terrain.  Can see through Hills and Mountains.  Can scale Cliffs.'),
-		('en_US', 'LOC_PROMOTION_RANGER_DESCRIPTION', 						'Faster [ICON_Movement] Movement in Woods and Rainforest terrain.  Can see through Woods and Rainforest.'),
+		 -- 																AMPHIBIOUS_BONUS_IGNORE_RIVERS 		AMPHIBIOUS_BONUS_IGNORE_SHORES 			AQUATIC_BONUS_SEA_MOVEMENT
+		('en_US', 'LOC_PROMOTION_GUIDE_DESCRIPTION', 						'No river crossing penalties.[NEWLINE]No (dis)embarking penalties.[NEWLINE]+1 [ICON_Movement] Movement on water.'),
+		
+		('en_US', 'LOC_PROMOTION_ALPINE_DESCRIPTION', 						'Faster [ICON_Movement] Movement on Hill terrain.[NEWLINE]Can see through Hills and Mountains.[NEWLINE]Can scale Cliffs.'),
+		--																																													CREW_WEAPONS_DEFENSE_BONUS
+		('en_US', 'LOC_PROMOTION_RANGER_DESCRIPTION', 						'Faster [ICON_Movement] Movement in Woods and Rainforest.[NEWLINE]Can see through Woods and Rainforest.[NEWLINE]+7 [ICON_Strength] Combat Strength when defending.'),
 
 
 -----   MELEE   -----
@@ -155,7 +178,8 @@ INSERT OR REPLACE INTO LocalizedText (Language, Tag, Text) VALUES
 		('en_US', 'LOC_PROMOTION_AMBUSH_2_DESCRIPTION', 					'+5 [ICON_Strength] Combat Strength.'),
 		('en_US', 'LOC_PROMOTION_AMBUSH_3_NAME', 							'Ambush  III'),
 		('en_US', 'LOC_PROMOTION_AMBUSH_3_DESCRIPTION', 					'+5 [ICON_Strength] Combat Strength.'),
-
+		('en_US', 'LOC_PROMOTION_AMBUSH_4_NAME', 							'Ambush  IV'),
+		('en_US', 'LOC_PROMOTION_AMBUSH_4_DESCRIPTION', 					'+5 [ICON_Strength] Combat Strength.'),
 -----   VETERAN   -----
 		('en_US', 'LOC_PROMOTION_VETERAN_1_NAME', 							'Veteran  I'),
 		('en_US', 'LOC_PROMOTION_VETERAN_1_DESCRIPTION', 					'+3 [ICON_Strength] Combat Strength.'),
