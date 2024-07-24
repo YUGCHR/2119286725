@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="36B1DDBB-86BC-7B54-9272-49C748D9912D" version="1">
+	<Properties>
+		<Name>ARS - Improved Promotions v1.50</Name>
+		<Teaser>Improves all unit promotion trees.</Teaser>
+		<Description>Reworks and clarifies the unit promotion trees with the goal of making all options useful and effective.[NEWLINE][NEWLINE]All combat units now have 8 promotions to choose from.[NEWLINE][NEWLINE]The left column progresses through 4 ranks to an ultimate skill.[NEWLINE]The right column consists of 4 individual specializations.[NEWLINE][NEWLINE][NEWLINE]--  Siege units can move and shoot. Bombard Strength is reduced by 5.[NEWLINE]--  Aircraft Carriers have ranged attack and antiair defense, cost increased.[NEWLINE][NEWLINE][NEWLINE][NEWLINE]Compatible with "Warfare Expanded: Reloaded" mod.</Description>
+		<Authors>Arstahd</Authors>
+		<CompatibleVersions>2.0</CompatibleVersions>
+		<AffectsSavedGames>1</AffectsSavedGames>
+	</Properties>
+
+
+	<InGameActions>
+		<UpdateDatabase id="PromotionsData">
+			<Properties>
+				<LoadOrder>12500</LoadOrder>
+			</Properties>
+			<File>Improved Promotions Data.sql</File>
+		</UpdateDatabase>
+		<UpdateText id="PromotionsText">
+			<Properties>
+				<LoadOrder>12500</LoadOrder>
+			</Properties>
+			<File>Improved Promotions Text.sql</File>
+		</UpdateText>
+		<UpdateIcons id="PromotionsIcons">
+			<Properties>
+				<LoadOrder>12500</LoadOrder>
+			</Properties>
+			<File>Improved Promotions Icons.sql</File>
+		</UpdateIcons>
+		<ImportFiles id="PromotionsImport">
+			<File>PromotionIcons.dds</File>
+		</ImportFiles>
+	</InGameActions>
+
+
+	<Files>
+		<File>PromotionIcons.dds</File>
+		<File>Improved Promotions Data.sql</File>
+		<File>Improved Promotions Text.sql</File>
+		<File>Improved Promotions Icons.sql</File>
+	</Files>
+
+
+</Mod>

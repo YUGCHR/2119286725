@@ -1,0 +1,37 @@
+v1.4
+
+
+Replaced Recon - Aquatic promotion with 
+	Recon - Guide : No river crossing penalties. No (dis)embarking penalties. Shares Movement.  
+
+
+
+
+v1.3
+
+
+Added +1 move as compensation for Khmer Domrey since they can Move and Shoot normally.
+
+Recon - Ambush I,II,III : Reduced bonus Combat Strength from +6 to +5.
+
+Recon - Sentry : Changed to  +1 sight range. +7 Combat Strength when garrisoned or defending.
+
+Heavy Cavalry - Relentless : Combat damage penalty reduction increased from 67% to 70%.
+
+Anti-Cavalry - To the Last : Combat damage penalty reduction increased from 67% to 70%.
+
+Warrior Monk - Dancing Crane : Replaced [+5 CS when defending] with [Ignores Zone of Control].
+
+
+
+
+v1.2
+
+
+Flagged to effect saved games.
+
+Recon - Aquatic: Water movement bonus increased from +1 to +2.
+
+Added support for Nihang promotions tree.
+
+Rewrote code to hide old promotion trees rather than delete them, improving compatiblity with other mods.
