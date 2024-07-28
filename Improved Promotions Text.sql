@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Improved Promotions Text v1.58
+-- Improved Promotions Text v1.591
 -- Author: Arstahd
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ INSERT OR REPLACE INTO LocalizedText (Language, Tag, Text) VALUES
 		 -- 																MOD_MOVE_AFTER_ATTACKING 		   HEAL_AFTER_ACTION 				SIDE_ARMS_DEFENSE_BONUS 					INCREASE_HEAL_RATE_10
 		('en_US', 'LOC_PROMOTION_SPECIAL_FORCES_DESCRIPTION', 				'Can move after attacking.[NEWLINE]Heals even after moving.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.[NEWLINE]+10 [ICON_Damaged] Health when healing.'),
 
-		('en_US', 'LOC_PROMOTION_GUERRILLA_NAME', 			     	 	    'Guerrilla'), -- ('PROMOTION_GUERRILLA', 'LOC_PROMOTION_GUERRILLA_NAME', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 3, 3, 'PROMOTION_CLASS_RECON'),
+		('en_US', 'LOC_PROMOTION_GUERRILLA_NAME', 			     	 	    'Guerrilla'),
 		 -- 																CAMOUFLAGE_STEALTH 						  LONG_RANGE_BONUS_RANGE			INCREASE_HEAL_RATE_5
 		('en_US', 'LOC_PROMOTION_GUERRILLA_DESCRIPTION', 					'Only visible to adjacent enemy.[NEWLINE].+2 [ICON_Range] Range.[NEWLINE]+5 [ICON_Damaged] Health when healing.'),
 
@@ -46,87 +46,272 @@ INSERT OR REPLACE INTO LocalizedText (Language, Tag, Text) VALUES
 
 
 -----   MELEE   -----
-		('en_US', 'LOC_PROMOTION_ELITE_GUARD_DESCRIPTION', 					'Can move after attacking.[NEWLINE]Can make 2 attacks per turn.'),
-		('en_US', 'LOC_PROMOTION_AMPHIBIOUS_DESCRIPTION', 					'No river crossing penalties.[NEWLINE]No (dis)embarking penalties.[NEWLINE]+1 [ICON_Movement] Movement on water.[NEWLINE]Can scale Cliff walls.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_MELEE_II_NAME', 					'Special Forces II'),
+		-- 																	ELITE_GUARD_ADDITIONAL_ATTACK	HELMSMAN_BONUS_WATER_MOVEMENT	INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_MELEE_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+1 sight range.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_MELEE_NAME', 						'Special Forces'),
+		-- 																	MOD_MOVE_AFTER_ATTACKING			FORWARD_OBSERVERS_BONUS_RANGE									INCREASE_HEAL_RATE_10
+		('en_US', 'LOC_PROMOTION_SPECIAL_MELEE_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.[NEWLINE]+10 [ICON_Damaged] Health when healing'),
+		--('en_US', 'LOC_PROMOTION_ELITE_GUARD_NAME', 						'Elite guard'),
+		-- 																	CREW_WEAPONS_DEFENSE_BONUS							HEAL_AFTER_ACTION						RELENTLESS_STRENGTH_REDUCTION
+		('en_US', 'LOC_PROMOTION_ELITE_GUARD_DESCRIPTION', 					'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]Heals even after moving.[NEWLINE]Suffers greatly reduced combat penalties when damaged.'),
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_MELEE_NAME', 					'Ambidexter'),
+		-- 																	VOLLEY_ATTACK_BONUS											SIDE_ARMS_DEFENSE_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_MELEE_DESCRIPTION', 			'+5 [ICON_Strength] Combat Strength when attacking[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
+		--('en_US', 'LOC_PROMOTION_AMPHIBIOUS_NAME', 							'Amphibian'),
+		-- 																	 AMPHIBIOUS_BONUS_IGNORE_SHORES	AMPHIBIOUS_BONUS_IGNORE_RIVERS		AMPHIBIOUS_BONUS_SEA_MOVEMENT				COMMANDO_BONUS_IGNORE_CLIFF_WALLS
+		('en_US', 'LOC_PROMOTION_AMPHIBIOUS_DESCRIPTION', 					'No river crossing penalties, no (dis)embarking penalties.[NEWLINE]+1 [ICON_Movement] Movement on water.[NEWLINE]Can scale Cliff walls.'),
+		--('en_US', 'LOC_PROMOTION_ELITE_GUARD_DESCRIPTION', 					'Can move after attacking.[NEWLINE]Can make 2 attacks per turn.'),
+		--('en_US', 'LOC_PROMOTION_AMPHIBIOUS_DESCRIPTION', 					'No river crossing penalties.[NEWLINE]No (dis)embarking penalties.[NEWLINE]+1 [ICON_Movement] Movement on water.[NEWLINE]Can scale Cliff walls.'),
 		('en_US', 'LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when attacking a city or district.'),
 		('en_US', 'LOC_PROMOTION_TORTOISE_DESCRIPTION', 					'+7 [ICON_Strength] Combat Strength when defending.'),
 		('en_US', 'LOC_PROMOTION_BATTLECRY_DESCRIPTION', 					'+5 [ICON_Strength] Combat Strength when attacking.'),
 
-
+		
 -----   RANGED   -----
-		('en_US', 'LOC_PROMOTION_EXPERT_MARKSMAN_DESCRIPTION', 				'Can make 2 attacks per turn.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_RANGED_II_NAME', 					'Special Forces II'),
+		-- 																	EXPERT_MARKSMAN_ADDITIONAL_ATTACK		INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_RANGED_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_RANGED_NAME', 						'Special Forces'),
+		-- 																	MOD_MOVE_AFTER_ATTACKING			FORWARD_OBSERVERS_BONUS_RANGE									HEAL_AFTER_ACTION
+		('en_US', 'LOC_PROMOTION_SPECIAL_RANGED_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.[NEWLINE]Heals even after moving.'),
+
+		('en_US', 'LOC_PROMOTION_EXPERT_MARKSMAN_NAME', 					'Expert marksman'),
+		-- 																	CREW_WEAPONS_DEFENSE_BONUS 							 HELMSMAN_BONUS_WATER_MOVEMENT  RELENTLESS_STRENGTH_REDUCTION
+		('en_US', 'LOC_PROMOTION_EXPERT_MARKSMAN_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+1 sight range.[NEWLINE]Suffers greatly reduced combat penalties when damaged.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_RANGED_NAME', 				'Ambidexter'),
+		-- 																	 DOUBLE_ENVELOPMENT_ATTACK_BONUS 							SIDE_ARMS_DEFENSE_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_RANGED_DESCRIPTION', 			'+5 [ICON_Strength] Combat Strength when attacking.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+		
+		('en_US', 'LOC_PROMOTION_INCENDIARIES_NAME', 						'Incendiary shells (disco bar)'),
+		-- 																	INCENDIARIES_BONUS_VS_DISTRICT_DEFENSES
 		('en_US', 'LOC_PROMOTION_INCENDIARIES_DESCRIPTION', 				'+7 [ICON_Ranged] Ranged Strength when attacking districts.'),
+
+		('en_US', 'LOC_PROMOTION_GARRISON_NAME', 							'Garrison well-fed life'),
+		-- 																	GARRISON_BONUS_DISTRICTS
 		('en_US', 'LOC_PROMOTION_GARRISON_DESCRIPTION', 					'+9 [ICON_Strength] Combat Strength when occupying a district or fort.'),
+
 		('en_US', 'LOC_PROMOTION_SIDE_ARMS_NAME', 							'Side Arms'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS
 		('en_US', 'LOC_PROMOTION_SIDE_ARMS_DESCRIPTION', 					'+7 [ICON_Strength] Combat Strength when defending.'),
+
+		('en_US', 'LOC_PROMOTION_VOLLEY_NAME', 								'Volley firing'),
+		-- 																	VOLLEY_ATTACK_BONUS
 		('en_US', 'LOC_PROMOTION_VOLLEY_DESCRIPTION', 						'+5 [ICON_Ranged] Ranged Strength.'),
 
 
 -----   SIEGE   -----
-		('en_US', 'LOC_PROMOTION_FORWARD_OBSERVERS_DESCRIPTION', 			'+1 [ICON_Range] Range.[NEWLINE]Can fire over terrain & features.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_SIEGE_II_NAME', 					'Special Forces II'),
+		-- 																	EXPERT_MARKSMAN_ADDITIONAL_ATTACK		INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_SIEGE_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_SIEGE_NAME', 						'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			FORWARD_OBSERVERS_BONUS_RANGE									HEAL_AFTER_ACTION
+		('en_US', 'LOC_PROMOTION_SPECIAL_SIEGE_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.[NEWLINE]Heals even after moving.'),
+		('en_US', 'LOC_PROMOTION_FORWARD_OBSERVERS_NAME', 	   				'Seasoned cannoneer'),
+		-- 																	GARRISON_BONUS_DISTRICTS 											  HELMSMAN_BONUS_WATER_MOVEMENT    RELENTLESS_STRENGTH_REDUCTION
+		('en_US', 'LOC_PROMOTION_FORWARD_OBSERVERS_DESCRIPTION', 			'+9 [ICON_Strength] Combat Strength when occupying a district or fort.[NEWLINE]+1 sight range.[NEWLINE]Suffers greatly reduced combat penalties when damaged.'),
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_SIEGE_NAME', 					'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_SIEGE_DESCRIPTION', 			'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
 		('en_US', 'LOC_PROMOTION_RESUPPLY_NAME', 							'Resupply'),
+		-- 																	INCREASE_HEAL_RATE_10
 		('en_US', 'LOC_PROMOTION_RESUPPLY_DESCRIPTION', 					'+10 [ICON_Damaged] Health when healing.'),
+		('en_US', 'LOC_PROMOTION_SHRAPNEL_NAME', 							'Shrapnel shells'),
+		-- 																	BOMBARD_BONUS_VS_UNITS
 		('en_US', 'LOC_PROMOTION_SHRAPNEL_DESCRIPTION', 					'+7 [ICON_Bombard] Bombard strength when attacking units.'),
---		('en_US', 'LOC_PROMOTION_CREW_WEAPONS_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.'),
+		('en_US', 'LOC_PROMOTION_CREW_WEAPONS_NAME', 						'Crew weapon'),
+		-- 																	CREW_WEAPONS_DEFENSE_BONUS
+		('en_US', 'LOC_PROMOTION_CREW_WEAPONS_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.'),
+		('en_US', 'LOC_PROMOTION_SHELLS_NAME', 								'Incendiary shells (actually)'),
+		-- 																	SHELLS_BONUS_VS_DISTRICTS
 		('en_US', 'LOC_PROMOTION_SHELLS_DESCRIPTION', 						'+7 [ICON_Bombard] Bombard strength when attacking districts.'),
 
 
 -----   ANTI CAVALRY   -----
-		('en_US', 'LOC_PROMOTION_REDEPLOY_DESCRIPTION', 					'Can move after attacking.[NEWLINE]Can make 2 attacks per turn.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_SPEAR_II_NAME', 					'Special Forces II'),
+		-- 																	EXPERT_MARKSMAN_ADDITIONAL_ATTACK		INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_SPEAR_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_SPEAR_NAME', 						'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			FORWARD_OBSERVERS_BONUS_RANGE
+		('en_US', 'LOC_PROMOTION_SPECIAL_SPEAR_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.'),
+		
+		-- 																	CREW_WEAPONS_DEFENSE_BONUS									HEAL_AFTER_ACTION    
+		('en_US', 'LOC_PROMOTION_REDEPLOY_DESCRIPTION', 					'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]Heals even after moving.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_SPEAR_NAME', 					'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_SPEAR_DESCRIPTION', 			'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
 		('en_US', 'LOC_PROMOTION_MARCH_NAME', 								'March'),
-		('en_US', 'LOC_PROMOTION_MARCH_DESCRIPTION', 						'Heals every turn, even after moving or combat.'),
+		-- 																	INCENDIARIES_BONUS_VS_DISTRICT_DEFENSES
+		('en_US', 'LOC_PROMOTION_MARCH_DESCRIPTION', 						'+7 [ICON_Ranged] Ranged Strength when attacking districts.'),
+		
+		-- 																	ECHELON_ADDITIONAL_CAVALRY_BONUS
 		('en_US', 'LOC_PROMOTION_ECHELON_DESCRIPTION', 						'+7 [ICON_Strength] Combat Strength when fighting cavalry units.'),
+
 		('en_US', 'LOC_PROMOTION_CLOSE_RANKS_NAME', 						'Close Ranks'),
+		-- 																	CLOSE_RANKS_DEFENSE_BONUS
 		('en_US', 'LOC_PROMOTION_CLOSE_RANKS_DESCRIPTION', 					'+7 [ICON_Strength] Combat Strength when defending.'),
+
 		('en_US', 'LOC_PROMOTION_TO_THE_LAST_NAME', 						'To the Last'),
+		-- 																	RELENTLESS_STRENGTH_REDUCTION
 		('en_US', 'LOC_PROMOTION_TO_THE_LAST_DESCRIPTION', 					'Suffers greatly reduced combat penalties when damaged.'),
 
 
 -----   LIGHT CAVALRY   -----
+		('en_US', 'LOC_PROMOTION_SPECIAL_LIGHT_II_NAME', 					'Special Forces II'),
+		-- 																	EXPERT_MARKSMAN_ADDITIONAL_ATTACK		INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_LIGHT_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_LIGHT_NAME', 						'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			FORWARD_OBSERVERS_BONUS_RANGE
+		('en_US', 'LOC_PROMOTION_SPECIAL_LIGHT_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.'),
+
 		('en_US', 'LOC_PROMOTION_HIT_AND_RUN_NAME', 						'Hit and Run'),
-		('en_US', 'LOC_PROMOTION_HIT_AND_RUN_DESCRIPTION', 					'Can move after attacking.[NEWLINE]Pillaging cost reduced to 1.[NEWLINE]Heals even after moving.'),
+		-- 																	RELENTLESS_STRENGTH_REDUCTION							DEPREDATION_BONUS_ADVANCED_PILLAGING
+		('en_US', 'LOC_PROMOTION_HIT_AND_RUN_DESCRIPTION', 					'Suffers greatly reduced combat penalties when damaged.[NEWLINE]Pillaging cost reduced to 1.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_LIGHT_NAME', 					'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_LIGHT_DESCRIPTION', 			'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
+		-- 																	PURSUIT_BONUS_MOVEMENT  			  ESCORT_MOBILITY_SHARED_MOVEMENT
 		('en_US', 'LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION', 				'+1 [ICON_Movement] Movement.[NEWLINE]Shares [ICON_Movement] Movement.'),
+
+		-- 																	COURSERS_BONUS_VS_RANGED_SIEGE
 		('en_US', 'LOC_PROMOTION_COURSERS_DESCRIPTION', 					'+9 [ICON_Strength] Combat Strength when attacking ranged and siege units.'),
+
 		('en_US', 'LOC_PROMOTION_EVASIVE_TARGET_NAME', 						'Evasive Target'),
+		-- 																	EVASIVE_TARGET_DEFENSE_BONUS
 		('en_US', 'LOC_PROMOTION_EVASIVE_TARGET_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.'),
+
 		('en_US', 'LOC_PROMOTION_DOUBLE_ENVELOPMENT_NAME', 					'Envelopment'),
+		-- 																	DOUBLE_ENVELOPMENT_ATTACK_BONUS
 		('en_US', 'LOC_PROMOTION_DOUBLE_ENVELOPMENT_DESCRIPTION', 			'+5 [ICON_Strength] Combat Strength when attacking.'),
 
 
 -----   HEAVY CAVALRY   -----
-		('en_US', 'LOC_PROMOTION_BREAKTHROUGH_DESCRIPTION', 				'Can move after attacking.[NEWLINE]Can make 2 attacks per turn.'),
+		('en_US', 'LOC_PROMOTION_SPECIAL_HEAVY_II_NAME', 					'Special Forces II'),
+		-- 																	BREAKTHROUGH_ADDITIONAL_ATTACK		 INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_HEAVY_II_DESCRIPTION', 			'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_HEAVY_NAME', 						'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			FORWARD_OBSERVERS_BONUS_RANGE
+		('en_US', 'LOC_PROMOTION_SPECIAL_HEAVY_DESCRIPTION', 				'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.'),
+
+		-- 																	HEAL_AFTER_ACTION				DEPREDATION_BONUS_ADVANCED_PILLAGING
+		('en_US', 'LOC_PROMOTION_BREAKTHROUGH_DESCRIPTION', 				'Heals even after moving.[NEWLINE]Pillaging cost reduced to 1.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_HEAVY_NAME', 					'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_HEAVY_DESCRIPTION', 			'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
 		('en_US', 'LOC_PROMOTION_ROUT_DESCRIPTION', 						'May push back a defending unit after a victorious attack.'),
+
 		('en_US', 'LOC_PROMOTION_URBAN_ASSAULT_NAME', 						'Urban Assault'),
+		-- 																	URBAN_ASSAULT_BONUS
 		('en_US', 'LOC_PROMOTION_URBAN_ASSAULT_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when attacking a city or district.'),
+		-- 																	BARDING_DEFENSE_BONUS
 		('en_US', 'LOC_PROMOTION_BARDING_DESCRIPTION', 						'+7 [ICON_Strength] Combat Strength when defending.'),
+
 		('en_US', 'LOC_PROMOTION_RELENTLESS_NAME', 							'Relentless'),
+		-- 																	RELENTLESS_STRENGTH_REDUCTION
 		('en_US', 'LOC_PROMOTION_RELENTLESS_DESCRIPTION', 					'Suffers greatly reduced combat penalties when damaged.'),
 
 
 -----   NAVAL MELEE   -----
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_MELEE_II_NAME', 			'Special Forces II'),
+		-- 																	BREAKTHROUGH_ADDITIONAL_ATTACK		 INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_MELEE_II_DESCRIPTION', 		'Can make 2 attacks per turn.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_MELEE_NAME', 				'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			FORWARD_OBSERVERS_BONUS_RANGE
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_MELEE_DESCRIPTION', 		'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range. Can fire over terrain & features.'),
+
 		('en_US', 'LOC_PROMOTION_ONSLAUGHT_NAME', 							'Onslaught'),
-		('en_US', 'LOC_PROMOTION_ONSLAUGHT_DESCRIPTION', 					'Can move after attacking.[NEWLINE]Can make 2 attacks per turn.'),
+		-- 																	 HEAL_AFTER_ACTION 			DEPREDATION_BONUS_ADVANCED_PILLAGING
+		('en_US', 'LOC_PROMOTION_ONSLAUGHT_DESCRIPTION', 					'Heals even after moving.[NEWLINE]Pillaging cost reduced to 1.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_MELEE_NAME', 			'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_MELEE_DESCRIPTION', 	'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
+		-- 																	EMBOLON_BONUS_VS_NAVAL
 		('en_US', 'LOC_PROMOTION_EMBOLON_DESCRIPTION', 						'+5 [ICON_Strength] Combat Strength when fighting Naval units.'),
+
+		-- 																	HELMSMAN_BONUS_WATER_MOVEMENT		RUTTER_SIGHT_BONUS
 		('en_US', 'LOC_PROMOTION_HELMSMAN_DESCRIPTION', 					'+1 [ICON_Movement] Movement.[NEWLINE]+1 sight range.'),
+
+		-- 																	REINFORCED_HULL_DEFENSE_BONUS
 		('en_US', 'LOC_PROMOTION_REINFORCED_HULL_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.'),
+
+		-- 																	AUXILIARY_SHIPS_NEUTRAL_TERRITORY_HEAL			AUXILIARY_SHIPS_ENEMY_TERRITORY_HEAL
 		('en_US', 'LOC_PROMOTION_AUXILIARY_SHIPS_DESCRIPTION', 				'+5 [ICON_Damaged] Health when healing.[NEWLINE]Can Heal in any territory.'),
 
 
 -----   NAVAL RANGED   -----
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RANGED_II_NAME', 			'Special Forces II'),
+		-- 																	BREAKTHROUGH_ADDITIONAL_ATTACK		SENTRY_SEE_THROUGH_FEATURES	 				INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RANGED_II_DESCRIPTION', 		'Can make 2 attacks per turn.[NEWLINE]Can fire over terrain & features.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RANGED_NAME', 				'Special Forces'),
+		-- 																	 MOD_MOVE_AFTER_ATTACKING 			COINCIDENCE_RANGEFINDING_BONUS_RANGE
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RANGED_DESCRIPTION', 		'Can move after attacking.[NEWLINE]+1 [ICON_Range] Range.'),
+
 		('en_US', 'LOC_PROMOTION_RANGEFINDING_NAME', 						'Rangefinding'),
-		('en_US', 'LOC_PROMOTION_RANGEFINDING_DESCRIPTION', 				'+1 [ICON_Range] Range.[NEWLINE]Can fire over terrain & features.'),
+		--																	REINFORCED_HULL_DEFENSE_BONUS								DEPREDATION_BONUS_ADVANCED_PILLAGING
+		('en_US', 'LOC_PROMOTION_RANGEFINDING_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]Pillaging cost reduced to 1.'),
+		
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_RANGED_NAME', 			'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_RANGED_DESCRIPTION', 	'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
+		-- 																	LINE_OF_BATTLE_BONUS_VS_NAVAL
 		('en_US', 'LOC_PROMOTION_LINE_OF_BATTLE_DESCRIPTION', 				'+7 [ICON_Ranged] Ranged strength when attacking naval units.'),
+
+		-- 																	BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES
 		('en_US', 'LOC_PROMOTION_BOMBARDMENT_DESCRIPTION', 					'+7 [ICON_Ranged] Ranged strength when attacking districts.'),
+
+		-- 																	PREPARATORY_FIRE_BONUS_VS_LAND
 		('en_US', 'LOC_PROMOTION_PREPARATORY_FIRE_DESCRIPTION', 			'+7 [ICON_Ranged] Ranged strength when attacking land units.'),
+
+		-- 																	SUPPLY_FLEET_NEUTRAL_TERRITORY_HEAL				SUPPLY_FLEET_ENEMY_TERRITORY_HEAL
 		('en_US', 'LOC_PROMOTION_SUPPLY_FLEET_DESCRIPTION', 				'+5 [ICON_Damaged] Health when healing.[NEWLINE]Can Heal in any territory.'),
 
 -----   NAVAL RAIDER   -----
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RAIDER_II_NAME', 			'Special Forces II'),
+		-- 																	WOLFPACK_ADDITIONAL_ATTACK		SENTRY_SEE_THROUGH_FEATURES	 				INCREASE_HEAL_RATE_15
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RAIDER_II_DESCRIPTION', 		'Can make 2 attacks per turn.[NEWLINE]Can fire over terrain & features.[NEWLINE]+15 [ICON_Damaged] Health when healing.'),
+
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RAIDER_NAME', 				'Special Forces'),
+		-- 																	 SUPPLY_FLEET_NEUTRAL_TERRITORY_HEAL SUPPLY_FLEET_ENEMY_TERRITORY_HEAL 	SWIFT_KEEL_BONUS_MOVEMENT
+		('en_US', 'LOC_PROMOTION_SPECIAL_NAVAL_RAIDER_DESCRIPTION', 		'Can Heal in any territory.[NEWLINE]+1 [ICON_Movement] Movement.[NEWLINE]+1 sight range.'),
+
 		('en_US', 'LOC_PROMOTION_QUICK_FIRING_NAME', 						'Quick Firing'),
-		('en_US', 'LOC_PROMOTION_QUICK_FIRING_DESCRIPTION', 				'Can make 2 attacks per turn.'),
+		-- 																	REINFORCED_HULL_DEFENSE_BONUS								DEPREDATION_BONUS_ADVANCED_PILLAGING
+		('en_US', 'LOC_PROMOTION_QUICK_FIRING_DESCRIPTION', 				'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]Pillaging cost reduced to 1.'),
+
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_RAIDER_NAME', 			'Ambidexter'),
+		-- 																	SIDE_ARMS_DEFENSE_BONUS										VOLLEY_ATTACK_BONUS
+		('en_US', 'LOC_PROMOTION_AMBIDEXTROUS_NAVAL_RAIDER_DESCRIPTION', 	'+7 [ICON_Strength] Combat Strength when defending.[NEWLINE]+5 [ICON_Ranged] Ranged Strength.'),
+
+		-- 																	HEAL_FROM_COMBAT
 		('en_US', 'LOC_PROMOTION_BOARDING_DESCRIPTION', 					'Obtain [ICON_Gold] Gold and recover +20 [ICON_Damaged] Health from naval combat victories.'),
+
+		-- 																	OBSERVATION_INCREASED_SIGHT_RANGE
 		('en_US', 'LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION', 					'+1 [ICON_Movement] Movement.[NEWLINE]+1 sight range.'),
---		('en_US', 'LOC_PROMOTION_SILENT_RUNNING_DESCRIPTION', 				'Can move after attacking.'),
+
+		-- 																	SILENT_RUNNING_MOVE_AFTER_ATTACKING
+		('en_US', 'LOC_PROMOTION_SILENT_RUNNING_DESCRIPTION', 				'Can move after attacking.'),
+
 		('en_US', 'LOC_PROMOTION_PREDATOR_NAME', 							'Predator'),
+		-- 																	PREDATOR_BONUS_VS_NAVAL
 		('en_US', 'LOC_PROMOTION_PREDATOR_DESCRIPTION', 					'+5 [ICON_Strength] Combat Strength when fighting Naval units.'),
 
 -----   NAVAL CARRIER   -----
